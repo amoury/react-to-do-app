@@ -16,6 +16,9 @@ class App extends Component {
     const todos = localStorage.getItem('todos');
     const completedTodos = localStorage.getItem('completedTodos');
 
+    if (!todos) return [];
+    if (!completedTodos) return [];
+
     this.setState({ completedTodos: JSON.parse(completedTodos) });
     this.setState({ todos: JSON.parse(todos)});
   }
